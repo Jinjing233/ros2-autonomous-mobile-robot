@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+  AMR differential-drive robot description.
+  All mechanical parameters are defined in this file and consumed by included Xacro modules.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amr">
+
+  <!-- ================================================================== -->
+  <!-- Mechanical parameters (SI units: meters, kilograms, radians)       -->
+  <!-- ================================================================== -->
+
+  <!-- Chassis -->
+  <xacro:property name="chassis_length" value="0.500"/>
+  <xacro:property name="chassis_width" value="0.400"/>
+  <xacro:property name="chassis_height" value="0.120"/>
+  <xacro:property name="chassis_mass" value="20.0"/>
+
+  <!-- Drive wheels -->
+  <xacro:property name="wheel_radius" value="0.050"/>
+  <xacro:property name="wheel_width" value="0.040"/>
+  <xacro:property name="wheel_mass" value="0.800"/>
+  <xacro:property name="wheel_separation" value="0.320"/>
+  <xacro:property name="wheel_x_offset" value="0.000"/>
+  <xacro:property name="wheel_z_offset" value="-0.060"/>
+
+  <!-- Passive caster -->
+  <xacro:property name="caster_radius" value="0.025"/>
+  <xacro:property name="caster_width" value="0.020"/>
+  <xacro:property name="caster_mass" value="0.200"/>
+  <xacro:property name="caster_x_offset" value="0.180"/>
+  <xacro:property name="caster_y_offset" value="0.000"/>
+  <xacro:property name="caster_z_offset" value="${wheel_z_offset}"/>
+
+  <!-- Sensors (mount poses relative to base_link) -->
+  <xacro:property name="laser_x_offset" value="0.000"/>
+  <xacro:property name="laser_y_offset" value="0.000"/>
+  <xacro:property name="laser_z_offset" value="0.140"/>
+  <xacro:property name="laser_radius" value="0.035"/>
+  <xacro:property name="laser_height" value="0.040"/>
+  <xacro:property name="laser_mass" value="0.300"/>
+
+  <xacro:property name="imu_x_offset" value="0.000"/>
+  <xacro:property name="imu_y_offset" value="0.000"/>
+  <xacro:property name="imu_z_offset" value="0.060"/>
+  <xacro:property name="imu_size" value="0.030"/>
+  <xacro:property name="imu_mass" value="0.010"/>
+
+  <!-- Derived: base_link height so wheel contact meets ground at base_footprint -->
+  <xacro:property name="base_link_z" value="${wheel_radius - wheel_z_offset}"/>
+
+  <!-- ================================================================== -->
+  <!-- Material definitions                                               -->
+  <!-- ================================================================== -->
+  <material name="chassis_grey">
+    <color rgba="0.60 0.60 0.62 1.0"/>
+  </material>
+  <material name="wheel_black">
+    <color rgba="0.12 0.12 0.12 1.0"/>
+  </material>
+  <material name="caster_grey">
+    <color rgba="0.30 0.30 0.32 1.0"/>
+  </material>
+  <material name="laser_dark">
+    <color rgba="0.05 0.05 0.05 1.0"/>
+  </material>
+  <material name="imu_blue">
+    <color rgba="0.20 0.40 0.80 1.0"/>
+  </material>
+
+  <!-- ================================================================== -->
+  <!-- Module includes and instantiation                                  -->
+  <!-- ================================================================== -->
+  <xacro:include filename="$(find amr_description)/urdf/amr_base.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/amr_wheels.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/amr_caster.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/amr_sensors.xacro"/>
+
+  <xacro:amr_base/>
+  <xacro:amr_wheels/>
+  <xacro:amr_caster/>
+  <xacro:amr_sensors/>
+
+</robot>

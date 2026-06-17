@@ -2,7 +2,16 @@
 
 ## Status
 
-**Planned** — Package scaffold created in Sprint 0. No launch files yet.
+**In Progress** — Sprint 1: `display.launch.py` implemented. Additional launches planned for later sprints.
+
+## Usage
+
+```bash
+source install/setup.bash
+ros2 launch amr_bringup display.launch.py
+```
+
+Starts `robot_state_publisher`, `joint_state_publisher_gui`, and RViz2 with the AMR model.
 
 ## Purpose
 
@@ -12,7 +21,7 @@ Provides top-level launch entry points that compose nodes and configurations fro
 
 | Component | Sprint | Description |
 |-----------|--------|-------------|
-| `launch/display.launch.py` | 1 | Robot model + RViz visualization |
+| `launch/display.launch.py` | 1 | **Implemented** — Robot model + RViz visualization |
 | `launch/gazebo.launch.py` | 2 | Gazebo Classic simulation with sensors |
 | `launch/control.launch.py` | 3 | Teleoperation and odometry stack |
 | `launch/slam.launch.py` | 4 | SLAM Toolbox mapping |

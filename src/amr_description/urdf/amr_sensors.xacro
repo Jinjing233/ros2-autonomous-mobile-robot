@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="amr_sensors">
+
+    <!-- 2D LiDAR mount frame -->
+    <link name="laser_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="${laser_radius}" length="${laser_height}"/>
+        </geometry>
+        <material name="laser_dark"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="${laser_radius}" length="${laser_height}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${laser_mass}"/>
+        <inertia
+          ixx="${laser_mass / 12.0 * (3.0 * laser_radius * laser_radius + laser_height * laser_height)}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${laser_mass / 12.0 * (3.0 * laser_radius * laser_radius + laser_height * laser_height)}"
+          iyz="0.0"
+          izz="${laser_mass / 2.0 * laser_radius * laser_radius}"/>
+      </inertial>
+    </link>
+
+    <joint name="laser_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="laser_link"/>
+      <origin
+        xyz="${laser_x_offset} ${laser_y_offset} ${laser_z_offset}"
+        rpy="0 0 0"/>
+    </joint>
+
+    <!-- IMU mount frame -->
+    <link name="imu_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${imu_size} ${imu_size} ${imu_size}"/>
+        </geometry>
+        <material name="imu_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${imu_size} ${imu_size} ${imu_size}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${imu_mass}"/>
+        <inertia
+          ixx="${imu_mass / 6.0 * imu_size * imu_size}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${imu_mass / 6.0 * imu_size * imu_size}"
+          iyz="0.0"
+          izz="${imu_mass / 6.0 * imu_size * imu_size}"/>
+      </inertial>
+    </link>
+
+    <joint name="imu_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="imu_link"/>
+      <origin
+        xyz="${imu_x_offset} ${imu_y_offset} ${imu_z_offset}"
+        rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>
