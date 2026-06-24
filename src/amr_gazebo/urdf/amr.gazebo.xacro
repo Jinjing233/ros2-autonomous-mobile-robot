@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
-  AMR differential-drive robot description.
-  All mechanical parameters are defined in amr_properties.xacro.
+  Gazebo Classic simulation overlay for the AMR platform.
+  Reuses the amr_description kinematic model and adds simulation plugins.
 -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amr">
 
@@ -11,10 +11,14 @@
   <xacro:include filename="$(find amr_description)/urdf/amr_wheels.xacro"/>
   <xacro:include filename="$(find amr_description)/urdf/amr_caster.xacro"/>
   <xacro:include filename="$(find amr_description)/urdf/amr_sensors.xacro"/>
+  <xacro:include filename="$(find amr_gazebo)/urdf/amr_lidar.gazebo.xacro"/>
+  <xacro:include filename="$(find amr_gazebo)/urdf/amr_imu.gazebo.xacro"/>
 
   <xacro:amr_base/>
   <xacro:amr_wheels/>
   <xacro:amr_caster/>
   <xacro:amr_sensors/>
+  <xacro:amr_lidar_gazebo/>
+  <xacro:amr_imu_gazebo/>
 
 </robot>

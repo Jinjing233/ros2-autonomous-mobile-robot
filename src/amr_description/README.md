@@ -12,7 +12,8 @@ Owns the kinematic and visual description of the differential-drive AMR. This is
 
 | Component | Sprint | Description |
 |-----------|--------|-------------|
-| `urdf/amr.urdf.xacro` | 1 | Top-level robot Xacro |
+| `urdf/amr.urdf.xacro` | 1 | Top-level robot Xacro (includes properties + modules) |
+| `urdf/amr_properties.xacro` | 1 | Shared mechanical parameters and materials |
 | `urdf/amr_base.xacro` | 1 | Base link, footprint, and physical dimensions |
 | `urdf/amr_wheels.xacro` | 1 | Drive wheel macros (left/right) |
 | `urdf/amr_caster.xacro` | 1 | Passive caster wheel |
