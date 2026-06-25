@@ -7,12 +7,14 @@ This document tracks sprint progress, deliverables, and acceptance criteria for 
 | Sprint | Focus | Status |
 |--------|-------|--------|
 | 0 | Repository and package architecture | **Complete** |
-| 1 | Robot model and RViz visualization | Planned |
-| 2 | Gazebo Classic simulation with sensors | Planned |
-| 3 | Differential-drive control and teleoperation | Planned |
+| 1 | Robot model and RViz visualization | **Complete** |
+| 2 | Gazebo Classic simulation with sensors | **Complete** |
+| 3 | Differential-drive control, teleop, odometry | **Complete** |
 | 4 | SLAM Toolbox mapping | Planned |
 | 5 | Nav2 autonomous navigation | Planned |
 | 6+ | Perception, dashboard, hardware bring-up | Future |
+
+> **New session?** Read [handoff.md](handoff.md) for ROS graph, key files, known issues, and next tasks.
 
 ---
 
@@ -46,7 +48,7 @@ Establish the full package architecture, project documentation, and buildable RO
 
 ## Sprint 1 — Robot Model and RViz Visualization
 
-**Status: Planned**
+**Status: Complete**
 
 ### Goal
 
@@ -66,16 +68,16 @@ Define the differential-drive AMR kinematic and visual model; display it in RViz
 
 ### Acceptance Criteria
 
-- [ ] `ros2 launch amr_bringup display.launch.py` opens RViz with the robot model
-- [ ] TF tree includes `base_link`, `base_footprint`, `laser_link`, `imu_link`
-- [ ] Wheel joints are defined with correct axis and limits
-- [ ] No Gazebo or navigation dependencies required
+- [x] `ros2 launch amr_bringup display.launch.py` opens RViz with the robot model
+- [x] TF tree includes `base_link`, `base_footprint`, `laser_link`, `imu_link`
+- [x] Wheel joints are defined with correct axis and limits
+- [x] No Gazebo or navigation dependencies required
 
 ---
 
 ## Sprint 2 — Gazebo Classic Simulation
 
-**Status: Planned**
+**Status: Complete**
 
 ### Goal
 
@@ -96,16 +98,16 @@ Simulate the AMR in Gazebo Classic with LiDAR and IMU sensors publishing standar
 
 ### Acceptance Criteria
 
-- [ ] Robot spawns correctly in Gazebo Classic
-- [ ] `/scan` and `/imu` topics publish at expected rates
-- [ ] Sensor frames match URDF (`laser_link`, `imu_link`)
-- [ ] RViz can visualize laser scan in simulation
+- [x] Robot spawns correctly in Gazebo Classic
+- [x] `/scan` and `/imu` topics publish at expected rates
+- [x] Sensor frames match URDF (`laser_link`, `imu_link`)
+- [x] RViz can visualize laser scan in simulation
 
 ---
 
 ## Sprint 3 — Motion Control and Teleoperation
 
-**Status: Planned**
+**Status: Complete**
 
 ### Goal
 
@@ -118,16 +120,20 @@ Enable velocity command control of the simulated robot with odometry feedback.
 
 ### Deliverables
 
-- Differential-drive controller configuration (`ros2_control` or Gazebo diff-drive plugin)
-- `/cmd_vel` subscription and wheel actuation
-- `/odom` publication
-- Keyboard or joystick teleoperation launch
+- [x] Phase 1: `ros2_control` skeleton + Gazebo plugin (`amr_ros2_control.xacro`, `ros2_control.yaml`)
+- [x] Phase 2: `joint_state_broadcaster`
+- [x] Phase 3: `diff_drive_controller` (official Humble params)
+- [x] Phase 4: Keyboard teleop (`cmd_vel_keyboard.launch.py`)
+- [x] Phase 5: Odometry (`enable_odom_tf`, covariances, `open_loop`)
+- [x] Kinematics: both drive wheels axis `0 1 0` (left/right via controller wheel names)
+- [x] Stability: dual casters + Gazebo friction overlays + ODE tuning + `spawn_z:=0.0`
 
 ### Acceptance Criteria
 
-- [ ] Teleoperation drives the robot in Gazebo
-- [ ] `/odom` reflects robot motion with consistent TF (`odom` → `base_footprint`)
-- [ ] Linear and angular velocity commands behave as expected
+- [x] Teleoperation drives the robot in Gazebo (Phase 4)
+- [x] `/diff_drive_controller/odom` reflects motion; TF `odom` → `base_footprint` (Phase 5)
+- [x] Forward: x increases; turn: yaw changes; no unwanted spin at rest
+- [x] `/scan`, `/imu`, `/joint_states`, both controllers remain active (regression)
 
 ---
 

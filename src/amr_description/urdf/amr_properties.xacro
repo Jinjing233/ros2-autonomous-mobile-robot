@@ -25,7 +25,8 @@
   <xacro:property name="caster_mass" value="0.200"/>
   <xacro:property name="caster_x_offset" value="0.180"/>
   <xacro:property name="caster_y_offset" value="0.000"/>
-  <xacro:property name="caster_z_offset" value="${wheel_z_offset}"/>
+  <!-- Align caster ground contact with drive wheels (smaller radius → lower joint z) -->
+  <xacro:property name="caster_z_offset" value="${wheel_z_offset - wheel_radius + caster_radius}"/>
 
   <!-- Sensors (mount poses relative to base_link) -->
   <xacro:property name="laser_x_offset" value="0.000"/>

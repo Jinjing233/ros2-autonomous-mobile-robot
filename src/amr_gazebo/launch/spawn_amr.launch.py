@@ -1,6 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, RegisterEventHandler
-from launch.event_handlers import OnProcessExit
+from launch.actions import DeclareLaunchArgument
 from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
@@ -18,7 +17,6 @@ def generate_launch_description():
     spawn_x = LaunchConfiguration("spawn_x")
     spawn_y = LaunchConfiguration("spawn_y")
     spawn_z = LaunchConfiguration("spawn_z")
-    urdf_file = LaunchConfiguration("urdf_file")
 
     robot_description = ParameterValue(
         Command(["xacro ", xacro_file]),
@@ -29,11 +27,6 @@ def generate_launch_description():
         "robot_description": robot_description,
         "use_sim_time": use_sim_time,
     }
-
-    generate_urdf = ExecuteProcess(
-        cmd=["xacro", xacro_file, "-o", urdf_file],
-        output="screen",
-    )
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -56,8 +49,8 @@ def generate_launch_description():
         arguments=[
             "-entity",
             "amr",
-            "-file",
-            urdf_file,
+            "-topic",
+            "robot_description",
             "-x",
             spawn_x,
             "-y",
@@ -67,13 +60,6 @@ def generate_launch_description():
             "-timeout",
             "60.0",
         ],
-    )
-
-    spawn_after_urdf = RegisterEventHandler(
-        OnProcessExit(
-            target_action=generate_urdf,
-            on_exit=[spawn_entity_node],
-        )
     )
 
     return LaunchDescription(
@@ -95,17 +81,11 @@ def generate_launch_description():
             ),
             DeclareLaunchArgument(
                 "spawn_z",
-                default_value="0.05",
-                description="Initial spawn z position (meters)",
+                default_value="0.0",
+                description="Initial spawn z position (meters); base_footprint is at ground contact",
             ),
-            DeclareLaunchArgument(
-                "urdf_file",
-                default_value="/tmp/amr_robot.urdf",
-                description="Temporary URDF file path for Gazebo spawn",
-            ),
-            generate_urdf,
             robot_state_publisher_node,
             joint_state_publisher_node,
-            spawn_after_urdf,
+            spawn_entity_node,
         ]
     )

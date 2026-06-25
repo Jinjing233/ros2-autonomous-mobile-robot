@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Passive casters: low friction, softer contact than drive wheels -->
+  <xacro:macro name="amr_caster_gazebo">
+    <gazebo reference="caster_link">
+      <mu1>0.1</mu1>
+      <mu2>0.1</mu2>
+      <kp>500000.0</kp>
+      <kd>50.0</kd>
+      <minDepth>0.001</minDepth>
+    </gazebo>
+    <gazebo reference="rear_caster_link">
+      <mu1>0.1</mu1>
+      <mu2>0.1</mu2>
+      <kp>500000.0</kp>
+      <kd>50.0</kd>
+      <minDepth>0.001</minDepth>
+    </gazebo>
+  </xacro:macro>
+
+</robot>

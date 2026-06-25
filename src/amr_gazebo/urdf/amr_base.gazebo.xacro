@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Prevent chassis collision from gripping ground if it touches during pitch -->
+  <xacro:macro name="amr_base_gazebo">
+    <gazebo reference="base_link">
+      <mu1>0.1</mu1>
+      <mu2>0.1</mu2>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+    </gazebo>
+  </xacro:macro>
+
+</robot>

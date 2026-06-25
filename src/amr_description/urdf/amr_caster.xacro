@@ -3,9 +3,8 @@
 
   <xacro:property name="caster_roll" value="1.57079632679"/>
 
-  <xacro:macro name="amr_caster">
-
-    <link name="caster_link">
+  <xacro:macro name="caster_wheel" params="link_name joint_name x_offset">
+    <link name="${link_name}">
       <visual>
         <origin xyz="0 0 0" rpy="${caster_roll} 0 0"/>
         <geometry>
@@ -32,14 +31,18 @@
       </inertial>
     </link>
 
-    <joint name="caster_joint" type="fixed">
+    <joint name="${joint_name}" type="fixed">
       <parent link="base_link"/>
-      <child link="caster_link"/>
+      <child link="${link_name}"/>
       <origin
-        xyz="${caster_x_offset} ${caster_y_offset} ${caster_z_offset}"
+        xyz="${x_offset} ${caster_y_offset} ${caster_z_offset}"
         rpy="0 0 0"/>
     </joint>
+  </xacro:macro>
 
+  <xacro:macro name="amr_caster">
+    <xacro:caster_wheel link_name="caster_link" joint_name="caster_joint" x_offset="${caster_x_offset}"/>
+    <xacro:caster_wheel link_name="rear_caster_link" joint_name="rear_caster_joint" x_offset="${-caster_x_offset}"/>
   </xacro:macro>
 
 </robot>

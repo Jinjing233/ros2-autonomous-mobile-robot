@@ -3,7 +3,7 @@
 
   <xacro:property name="wheel_roll" value="1.57079632679"/>
 
-  <xacro:macro name="drive_wheel" params="prefix y_offset">
+  <xacro:macro name="drive_wheel" params="prefix y_offset axis_dir:=1">
     <link name="${prefix}_wheel_link">
       <visual>
         <origin xyz="0 0 0" rpy="${wheel_roll} 0 0"/>
@@ -37,13 +37,13 @@
       <origin
         xyz="${wheel_x_offset} ${y_offset} ${wheel_z_offset}"
         rpy="0 0 0"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="0 ${axis_dir} 0"/>
     </joint>
   </xacro:macro>
 
   <xacro:macro name="amr_wheels">
-    <xacro:drive_wheel prefix="left" y_offset="${wheel_separation / 2.0}"/>
-    <xacro:drive_wheel prefix="right" y_offset="${-wheel_separation / 2.0}"/>
+    <xacro:drive_wheel prefix="left" y_offset="${wheel_separation / 2.0}" axis_dir="1"/>
+    <xacro:drive_wheel prefix="right" y_offset="${-wheel_separation / 2.0}" axis_dir="1"/>
   </xacro:macro>
 
 </robot>

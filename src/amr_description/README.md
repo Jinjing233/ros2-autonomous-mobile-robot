@@ -2,7 +2,7 @@
 
 ## Status
 
-**Implemented** — Sprint 1 complete: modular Xacro model and RViz configuration.
+**Implemented** — Sprint 1 complete. Sprint 3 kinematics/stability updates applied (unified wheel axis `0 1 0`, dual casters, caster z alignment).
 
 ## Purpose
 
@@ -16,7 +16,8 @@ Owns the kinematic and visual description of the differential-drive AMR. This is
 | `urdf/amr_properties.xacro` | 1 | Shared mechanical parameters and materials |
 | `urdf/amr_base.xacro` | 1 | Base link, footprint, and physical dimensions |
 | `urdf/amr_wheels.xacro` | 1 | Drive wheel macros (left/right) |
-| `urdf/amr_caster.xacro` | 1 | Passive caster wheel |
+| `urdf/amr_caster.xacro` | 1 | Front + rear passive casters |
+| `urdf/amr_ros2_control.xacro` | 3 | GazeboSystem velocity interfaces for drive wheels |
 | `urdf/amr_sensors.xacro` | 1 | LiDAR and IMU link mounts |
 | `rviz/display.rviz` | 1 | RViz2 visualization configuration |
 
