@@ -98,6 +98,15 @@ def generate_launch_description():
         parameters=[{"use_sim_time": use_sim_time}],
     )
 
+    # Bridge /cmd_vel to controller topic; custom node avoids topic_tools QoS mismatch.
+    cmd_vel_relay_node = Node(
+        package="amr_control",
+        executable="cmd_vel_relay.py",
+        name="cmd_vel_relay",
+        output="screen",
+        parameters=[{"use_sim_time": use_sim_time}],
+    )
+
     spawn_joint_state_broadcaster = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=spawn_entity_node,
@@ -109,6 +118,13 @@ def generate_launch_description():
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
             on_exit=[diff_drive_controller_spawner],
+        )
+    )
+
+    spawn_cmd_vel_relay = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=diff_drive_controller_spawner,
+            on_exit=[cmd_vel_relay_node],
         )
     )
 
@@ -151,6 +167,7 @@ def generate_launch_description():
             ),
             spawn_joint_state_broadcaster,
             spawn_diff_drive_controller,
+            spawn_cmd_vel_relay,
             gazebo,
             robot_state_publisher_node,
             spawn_entity_node,

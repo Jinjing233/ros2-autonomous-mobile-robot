@@ -4,8 +4,13 @@ project(amr_control)
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY config launch
+  DIRECTORY config
   DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  PROGRAMS scripts/cmd_vel_relay.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
