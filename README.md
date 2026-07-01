@@ -201,29 +201,11 @@ The robot currently supports:
 
 ## Demo
 
-### Robot Simulation
+AMR V1：Gazebo 仿真中的自主导航（Map Server → AMCL → Nav2 → 目标到达）。
 
-*(Add simulation GIF here)*
-
-### Robot Driving
-
-*(Add driving GIF here)*
-
-### SLAM Mapping
-
-*(Add SLAM GIF here)*
-
-### Localization (AMCL)
-
-*(Add AMCL localization GIF here)*
-
-### Autonomous Navigation
-
-*(Add autonomous navigation GIF here)*
-
-### Saved Map
-
-*(Add saved map image here)*
+<video src="docs/assets/AMR_V1.mp4" controls width="100%">
+  <a href="docs/assets/AMR_V1.mp4">Download AMR V1 demo video</a>
+</video>
 
 ## Future Work (AMR V2)
 
