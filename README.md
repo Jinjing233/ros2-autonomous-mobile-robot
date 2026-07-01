@@ -199,14 +199,6 @@ The robot currently supports:
 - Goal-based autonomous navigation
 - Stable autonomous arrival
 
-## Demo
-
-AMR V1：Gazebo 仿真中的自主导航（Map Server → AMCL → Nav2 → 目标到达）。
-
-<video src="docs/assets/AMR_V1.mp4" controls width="100%">
-  <a href="docs/assets/AMR_V1.mp4">Download AMR V1 demo video</a>
-</video>
-
 ## Future Work (AMR V2)
 
 The next development stages include:
