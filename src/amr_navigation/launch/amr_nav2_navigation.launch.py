@@ -1,7 +1,4 @@
-# Based on nav2_bringup/launch/navigation_launch.py (ROS2 Humble).
-# AMR changes vs official navigation_launch.py:
-# - bond_timeout on lifecycle_manager_navigation (Gazebo sim-time bringup)
-# - lifecycle_nodes list unchanged (includes planner_server, behavior_server, bt_navigator, ...)
+# nav2_bringup navigation_launch.py + bond_timeout=10 for Gazebo sim time.
 #
 # Copyright (c) 2018 Intel Corporation
 #

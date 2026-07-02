@@ -1,39 +1,35 @@
 # amr_slam
 
-## Status
+SLAM Toolbox online mapping for the AMR.
 
-**Planned** — Package scaffold created in Sprint 0. No SLAM configuration yet.
+## Run
 
-## Purpose
+Gazebo must be running first.
 
-Integrates SLAM Toolbox for 2D LiDAR-based mapping and localization. Owns SLAM parameter files, mapping launch configurations, and map persistence workflows.
+```bash
+ros2 launch amr_slam mapping.launch.py use_sim_time:=true
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
 
-## Expected Components
+`mapping.launch.py` includes RViz. Skip `slam_rviz.launch.py` unless you split SLAM and RViz on purpose:
 
-| Component | Sprint | Description |
-|-----------|--------|-------------|
-| `config/slam_toolbox_params.yaml` | 4 | SLAM Toolbox tuning for the AMR |
-| `launch/online_async_slam.launch.py` | 4 | Online mapping while driving |
-| `launch/localization.launch.py` | 5 | Localization on a saved map |
-| `maps/` | 4 | Saved occupancy grid maps (gitignored at runtime) |
+```bash
+ros2 launch amr_slam online_async_slam.launch.py use_sim_time:=true
+ros2 launch amr_slam slam_rviz.launch.py use_sim_time:=true
+```
 
-## Dependencies (planned)
+Save map:
 
-- `slam_toolbox`
-- `amr_description`
-- Running `/scan`, `/odom`, and TF from simulation or hardware stack
+```bash
+ros2 launch amr_slam save_map.launch.py map_name:=my_map
+```
 
-## Related Packages
+## Topics
 
-- **Depends on:** `amr_description`
-- **Consumed by:** `amr_bringup`, `amr_navigation`
+| Topic | Direction |
+|-------|-----------|
+| `/scan` | in |
+| `/odom` | in |
+| `/map` | out |
 
-## Interface Contract
-
-| Topic | Type | Direction |
-|-------|------|-----------|
-| `/scan` | `sensor_msgs/LaserScan` | Subscribe |
-| `/odom` | `nav_msgs/Odometry` | Subscribe |
-| `/map` | `nav_msgs/OccupancyGrid` | Publish |
-
-TF: publishes / maintains `map` → `odom`
+Publishes `map` → `odom` TF while mapping.

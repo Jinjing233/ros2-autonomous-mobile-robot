@@ -1,5 +1,4 @@
-# Based on nav2_bringup/params/nav2_params.yaml (ROS2 Humble).
-# AMR overrides: TF frames and topic names only; algorithm params unchanged.
+# nav2_bringup/params/nav2_params.yaml (Humble) + AMR frames/topics; controller tuned for sim.
 
 amcl:
   ros__parameters:
@@ -41,8 +40,7 @@ amcl:
     z_rand: 0.5
     z_short: 0.05
     scan_topic: scan
-    # Required for headless Nav2 bringup: publish map->odom before planner_server
-    # activates global_costmap (matches default Gazebo spawn at origin).
+    # Gazebo spawn at origin; AMCL needs map->odom before planner_server starts
     set_initial_pose: true
     initial_pose:
       x: 0.0

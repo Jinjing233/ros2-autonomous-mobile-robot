@@ -1,42 +1,18 @@
 # amr_description
 
-## Status
+URDF/Xacro for the diff-drive AMR. No dependency on other `amr_*` packages.
 
-**Implemented** — Sprint 1 complete. Sprint 3 kinematics/stability updates applied (unified wheel axis `0 1 0`, dual casters, caster z alignment).
+## Layout
 
-## Purpose
+- `amr_properties.xacro` — dimensions, wheel radius, etc.
+- `amr_base.xacro`, `amr_wheels.xacro`, `amr_caster.xacro`, `amr_sensors.xacro`
+- `amr.urdf.xacro` — top-level model
+- `amr_ros2_control.xacro` — velocity interfaces (used from `amr_gazebo`)
 
-Owns the kinematic and visual description of the differential-drive AMR. This is the single source of truth for robot geometry, link hierarchy, joint definitions, and sensor frame mounts used by simulation, control, and navigation packages.
+LiDAR mount: center of base, `laser_z_offset` 0.14 m.
 
-## Expected Components
+## View in RViz
 
-| Component | Sprint | Description |
-|-----------|--------|-------------|
-| `urdf/amr.urdf.xacro` | 1 | Top-level robot Xacro (includes properties + modules) |
-| `urdf/amr_properties.xacro` | 1 | Shared mechanical parameters and materials |
-| `urdf/amr_base.xacro` | 1 | Base link, footprint, and physical dimensions |
-| `urdf/amr_wheels.xacro` | 1 | Drive wheel macros (left/right) |
-| `urdf/amr_caster.xacro` | 1 | Front + rear passive casters |
-| `urdf/amr_ros2_control.xacro` | 3 | GazeboSystem velocity interfaces for drive wheels |
-| `urdf/amr_sensors.xacro` | 1 | LiDAR and IMU link mounts |
-| `rviz/display.rviz` | 1 | RViz2 visualization configuration |
-
-## LiDAR Mount
-
-Top-center configuration for symmetric SLAM/navigation field of view:
-
-- `laser_x_offset`: 0.000 m
-- `laser_y_offset`: 0.000 m
-- `laser_z_offset`: 0.140 m
-
-## Dependencies (planned)
-
-- `robot_state_publisher`
-- `xacro`
-- `joint_state_publisher` / `joint_state_publisher_gui`
-- `rviz2`
-
-## Related Packages
-
-- **Consumed by:** `amr_bringup`, `amr_gazebo`, `amr_control`, `amr_navigation`
-- **Must not depend on:** any other `amr_*` package
+```bash
+ros2 launch amr_bringup display.launch.py
+```

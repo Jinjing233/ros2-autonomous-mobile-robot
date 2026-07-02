@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Send NavigateToPose from RViz goal_pose_rviz with sim-time stamp and long action timeout."""
+"""RViz /goal_pose_rviz -> NavigateToPose (re-stamps with sim time)."""
 
 import rclpy
 from rclpy.action import ActionClient
@@ -10,7 +10,6 @@ from nav2_msgs.action import NavigateToPose
 
 
 class NavGoalRelay(Node):
-    """Reliable NavigateToPose client for Gazebo sim-time bringup."""
 
     def __init__(self):
         super().__init__("nav_goal_relay")

@@ -1,11 +1,5 @@
 <?xml version="1.0" ?>
-<!--
-  AMR V1.1 — Robot Lab office (presentation polish).
-
-  Room ~15 m × 10 m. Central cross aisle (|x|,|y| ≤ 1.0 m) kept clear for spawn.
-  North wall storage row; four wall-hugging workstations; corridor-edge boxes.
-  Official Gazebo Classic models only.
--->
+<!-- ~15x10 m office; official Gazebo models; clear cross at origin for nav -->
 <sdf version="1.6">
   <world name="office">
 
@@ -36,7 +30,7 @@
       <shadows>true</shadows>
     </scene>
 
-    <!-- Light lab floor (replaces dark default ground_plane) -->
+    <!-- light floor instead of default ground_plane -->
     <model name="lab_floor">
       <static>true</static>
       <link name="floor_link">
@@ -67,8 +61,6 @@
     <include>
       <uri>model://sun</uri>
     </include>
-
-    <!-- ── Room shell (15 m × 10 m) ───────────────────────────────────── -->
 
     <include>
       <uri>model://grey_wall</uri>
@@ -111,8 +103,6 @@
       <pose>-7.5 -3.75 0 0 0 1.57079632679</pose>
     </include>
 
-    <!-- ── North storage zone (bookshelf + cabinet + parts tote) ──────── -->
-
     <include>
       <uri>model://bookshelf</uri>
       <name>storage_bookshelf</name>
@@ -134,39 +124,30 @@
       <pose>6.2 4.28 0 0 0 3.14159265359</pose>
     </include>
 
-    <!-- ── Workstations (table flush to wall; yaw aligned to wall) ────── -->
-
-    <!-- WS1: west wall, faces +X -->
     <include>
       <uri>model://table</uri>
       <name>desk_west</name>
       <pose>-5.75 2.45 0 0 0 1.57079632679</pose>
     </include>
 
-    <!-- WS2: north bay (below storage), faces -Y -->
     <include>
       <uri>model://table</uri>
       <name>desk_north_east</name>
       <pose>5.35 3.38 0 0 0 0</pose>
     </include>
 
-    <!-- WS3: south wall west bay, faces +Y -->
     <include>
       <uri>model://table</uri>
       <name>desk_south_west</name>
       <pose>-4.85 -3.85 0 0 0 0</pose>
     </include>
 
-    <!-- WS4: east wall, faces -X -->
     <include>
       <uri>model://table</uri>
       <name>desk_east</name>
       <pose>5.75 -2.35 0 0 0 -1.57079632679</pose>
     </include>
 
-    <!-- ── Seating (6 × scaled cafe_table; face room interior) ────────── -->
-
-    <!-- WS1: chairs face +X -->
     <include>
       <uri>model://cafe_table</uri>
       <name>seat_ws1_a</name>
@@ -180,7 +161,6 @@
       <scale>0.36 0.36 0.42</scale>
     </include>
 
-    <!-- WS2: chair faces -Y (toward room center) -->
     <include>
       <uri>model://cafe_table</uri>
       <name>seat_ws2</name>
@@ -188,7 +168,6 @@
       <scale>0.36 0.36 0.42</scale>
     </include>
 
-    <!-- WS3: chairs face +Y -->
     <include>
       <uri>model://cafe_table</uri>
       <name>seat_ws3_a</name>
@@ -202,15 +181,12 @@
       <scale>0.36 0.36 0.42</scale>
     </include>
 
-    <!-- WS4: chair faces -X -->
     <include>
       <uri>model://cafe_table</uri>
       <name>seat_ws4</name>
       <pose>4.88 -2.35 0 0 0 3.14159265359</pose>
       <scale>0.36 0.36 0.42</scale>
     </include>
-
-    <!-- ── Corridor-edge boxes (outside 2 m central cross) ────────────── -->
 
     <include>
       <uri>model://cardboard_box</uri>

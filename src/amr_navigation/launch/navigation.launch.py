@@ -36,7 +36,7 @@ def generate_launch_description():
     declare_map = DeclareLaunchArgument(
         "map",
         default_value=os.path.join(pkg_share, "maps", "amr_map.yaml"),
-        description="Full path to Sprint 4 saved map yaml",
+        description="Path to map yaml",
     )
 
     declare_use_sim_time = DeclareLaunchArgument(
@@ -48,7 +48,7 @@ def generate_launch_description():
     declare_params_file = DeclareLaunchArgument(
         "params_file",
         default_value=os.path.join(pkg_share, "config", "amr_nav2_params.yaml"),
-        description="AMR nav2 params (official baseline + TF/topic names only)",
+        description="Nav2 params yaml",
     )
 
     declare_autostart = DeclareLaunchArgument(
@@ -72,10 +72,7 @@ def generate_launch_description():
     declare_navigation_delay = DeclareLaunchArgument(
         "navigation_delay",
         default_value="8.0",
-        description=(
-            "Seconds to wait after localization before starting navigation "
-            "(map_server + AMCL map->odom must be ready before planner_server)"
-        ),
+        description="Delay (s) after localization before starting Nav2 nodes",
     )
 
     navigation_delay = LaunchConfiguration("navigation_delay")
