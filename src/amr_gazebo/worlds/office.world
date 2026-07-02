@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<!--
+  AMR V1.1 — Robot Lab office (presentation polish).
+
+  Room ~15 m × 10 m. Central cross aisle (|x|,|y| ≤ 1.0 m) kept clear for spawn.
+  North wall storage row; four wall-hugging workstations; corridor-edge boxes.
+  Official Gazebo Classic models only.
+-->
+<sdf version="1.6">
+  <world name="office">
+
+    <physics name="default_physics" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+          <sor>1.3</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>1.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <gravity>0 0 -9.8066</gravity>
+
+    <scene>
+      <ambient>0.62 0.62 0.65 1.0</ambient>
+      <background>0.78 0.80 0.84 1.0</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Light lab floor (replaces dark default ground_plane) -->
+    <model name="lab_floor">
+      <static>true</static>
+      <link name="floor_link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.78 0.78 0.80 1</ambient>
+            <diffuse>0.85 0.85 0.88 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- ── Room shell (15 m × 10 m) ───────────────────────────────────── -->
+
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_n_w</name>
+      <pose>-3.75 5.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_n_e</name>
+      <pose>3.75 5.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_s_w</name>
+      <pose>-3.75 -5.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_s_e</name>
+      <pose>3.75 -5.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_e_n</name>
+      <pose>7.5 3.75 0 0 0 1.57079632679</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_e_s</name>
+      <pose>7.5 -3.75 0 0 0 1.57079632679</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_w_n</name>
+      <pose>-7.5 3.75 0 0 0 1.57079632679</pose>
+    </include>
+    <include>
+      <uri>model://grey_wall</uri>
+      <name>wall_w_s</name>
+      <pose>-7.5 -3.75 0 0 0 1.57079632679</pose>
+    </include>
+
+    <!-- ── North storage zone (bookshelf + cabinet + parts tote) ──────── -->
+
+    <include>
+      <uri>model://bookshelf</uri>
+      <name>storage_bookshelf</name>
+      <pose>-6.65 4.28 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://cabinet</uri>
+      <name>storage_cabinet</name>
+      <pose>-2.0 4.28 0 0 0 3.14159265359</pose>
+    </include>
+    <include>
+      <uri>model://grey_tote</uri>
+      <name>storage_parts_tote</name>
+      <pose>2.6 4.25 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://cabinet</uri>
+      <name>storage_cabinet_e</name>
+      <pose>6.2 4.28 0 0 0 3.14159265359</pose>
+    </include>
+
+    <!-- ── Workstations (table flush to wall; yaw aligned to wall) ────── -->
+
+    <!-- WS1: west wall, faces +X -->
+    <include>
+      <uri>model://table</uri>
+      <name>desk_west</name>
+      <pose>-5.75 2.45 0 0 0 1.57079632679</pose>
+    </include>
+
+    <!-- WS2: north bay (below storage), faces -Y -->
+    <include>
+      <uri>model://table</uri>
+      <name>desk_north_east</name>
+      <pose>5.35 3.38 0 0 0 0</pose>
+    </include>
+
+    <!-- WS3: south wall west bay, faces +Y -->
+    <include>
+      <uri>model://table</uri>
+      <name>desk_south_west</name>
+      <pose>-4.85 -3.85 0 0 0 0</pose>
+    </include>
+
+    <!-- WS4: east wall, faces -X -->
+    <include>
+      <uri>model://table</uri>
+      <name>desk_east</name>
+      <pose>5.75 -2.35 0 0 0 -1.57079632679</pose>
+    </include>
+
+    <!-- ── Seating (6 × scaled cafe_table; face room interior) ────────── -->
+
+    <!-- WS1: chairs face +X -->
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws1_a</name>
+      <pose>-4.82 2.45 0 0 0 0</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws1_b</name>
+      <pose>-4.82 1.72 0 0 0 0</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+
+    <!-- WS2: chair faces -Y (toward room center) -->
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws2</name>
+      <pose>5.35 2.58 0 0 0 -1.57079632679</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+
+    <!-- WS3: chairs face +Y -->
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws3_a</name>
+      <pose>-4.85 -3.02 0 0 0 1.57079632679</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws3_b</name>
+      <pose>-4.08 -3.85 0 0 0 0</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+
+    <!-- WS4: chair faces -X -->
+    <include>
+      <uri>model://cafe_table</uri>
+      <name>seat_ws4</name>
+      <pose>4.88 -2.35 0 0 0 3.14159265359</pose>
+      <scale>0.36 0.36 0.42</scale>
+    </include>
+
+    <!-- ── Corridor-edge boxes (outside 2 m central cross) ────────────── -->
+
+    <include>
+      <uri>model://cardboard_box</uri>
+      <name>box_w_n</name>
+      <pose>-1.88 2.38 0 0 0 0.25</pose>
+    </include>
+    <include>
+      <uri>model://cardboard_box</uri>
+      <name>box_e_s</name>
+      <pose>1.95 -2.08 0 0 0 -0.40</pose>
+    </include>
+    <include>
+      <uri>model://cardboard_box</uri>
+      <name>box_w_s</name>
+      <pose>-2.02 -1.62 0 0 0 0.85</pose>
+    </include>
+    <include>
+      <uri>model://cardboard_box</uri>
+      <name>box_e_n</name>
+      <pose>1.78 2.52 0 0 0 -1.10</pose>
+    </include>
+
+  </world>
+</sdf>

@@ -3,7 +3,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction, RegisterEventHandler
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
@@ -11,14 +11,33 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 
-def generate_launch_description():
+def _resolve_world_path(world_arg: str, worlds_dir: str) -> str:
+    """Resolve world launch arg to an absolute .world file path."""
+    if os.path.isabs(world_arg) and os.path.isfile(world_arg):
+        return world_arg
+
+    if os.path.isfile(world_arg):
+        return os.path.abspath(world_arg)
+
+    filename = world_arg if world_arg.endswith(".world") else f"{world_arg}.world"
+    candidate = os.path.join(worlds_dir, filename)
+    if os.path.isfile(candidate):
+        return candidate
+
+    return world_arg
+
+
+def _launch_setup(context, *args, **kwargs):
     pkg_share = get_package_share_directory("amr_gazebo")
     gazebo_ros_share = get_package_share_directory("gazebo_ros")
-
-    default_world = os.path.join(pkg_share, "worlds", "empty.world")
+    worlds_dir = os.path.join(pkg_share, "worlds")
     xacro_file = os.path.join(pkg_share, "urdf", "amr.gazebo.xacro")
 
-    world = LaunchConfiguration("world")
+    world_path = _resolve_world_path(
+        LaunchConfiguration("world").perform(context),
+        worlds_dir,
+    )
+
     gui = LaunchConfiguration("gui")
     verbose = LaunchConfiguration("verbose")
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -31,7 +50,7 @@ def generate_launch_description():
             os.path.join(gazebo_ros_share, "launch", "gazebo.launch.py")
         ),
         launch_arguments={
-            "world": world,
+            "world": world_path,
             "gui": gui,
             "verbose": verbose,
         }.items(),
@@ -98,7 +117,6 @@ def generate_launch_description():
         parameters=[{"use_sim_time": use_sim_time}],
     )
 
-    # Bridge /cmd_vel to controller topic; custom node avoids topic_tools QoS mismatch.
     cmd_vel_relay_node = Node(
         package="amr_control",
         executable="cmd_vel_relay.py",
@@ -128,12 +146,29 @@ def generate_launch_description():
         )
     )
 
+    return [
+        spawn_joint_state_broadcaster,
+        spawn_diff_drive_controller,
+        spawn_cmd_vel_relay,
+        gazebo,
+        robot_state_publisher_node,
+        spawn_entity_node,
+    ]
+
+
+def generate_launch_description():
+    pkg_share = get_package_share_directory("amr_gazebo")
+    default_world = os.path.join(pkg_share, "worlds", "empty.world")
+
     return LaunchDescription(
         [
             DeclareLaunchArgument(
                 "world",
                 default_value=default_world,
-                description="Full path to the Gazebo world file",
+                description=(
+                    "Gazebo world file: full path, or short name such as "
+                    "empty.world / office.world"
+                ),
             ),
             DeclareLaunchArgument(
                 "gui",
@@ -165,11 +200,6 @@ def generate_launch_description():
                 default_value="0.0",
                 description="Initial spawn z position (meters); base_footprint is at ground contact",
             ),
-            spawn_joint_state_broadcaster,
-            spawn_diff_drive_controller,
-            spawn_cmd_vel_relay,
-            gazebo,
-            robot_state_publisher_node,
-            spawn_entity_node,
+            OpaqueFunction(function=_launch_setup),
         ]
     )
