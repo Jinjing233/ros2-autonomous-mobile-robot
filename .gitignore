@@ -37,3 +37,7 @@ venv/
 # Maps and runtime artifacts
 *.pgm
 *.yaml.bak
+
+# TF visualization
+frames_*.gv
+frames_*.pdf

@@ -42,6 +42,16 @@
   <xacro:property name="imu_size" value="0.030"/>
   <xacro:property name="imu_mass" value="0.010"/>
 
+  <!-- RGB camera: front of chassis, z≈0.25 m on base_link (Sprint 7 spec) -->
+  <xacro:property name="camera_x_offset" value="0.250"/>
+  <xacro:property name="camera_y_offset" value="0.000"/>
+  <xacro:property name="camera_z_offset" value="0.250"/>
+  <xacro:property name="camera_width" value="0.040"/>
+  <xacro:property name="camera_height" value="0.030"/>
+  <xacro:property name="camera_depth" value="0.025"/>
+  <xacro:property name="camera_mass" value="0.050"/>
+  <xacro:property name="camera_lens_x" value="0.0125"/>
+
   <!-- Derived: base_link height so wheel contact meets ground at base_footprint -->
   <xacro:property name="base_link_z" value="${wheel_radius - wheel_z_offset}"/>
 
@@ -59,6 +69,9 @@
   </material>
   <material name="imu_blue">
     <color rgba="0.20 0.40 0.80 1.0"/>
+  </material>
+  <material name="camera_grey">
+    <color rgba="0.25 0.25 0.28 1.0"/>
   </material>
 
 </robot>

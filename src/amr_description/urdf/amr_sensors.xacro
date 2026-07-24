@@ -75,6 +75,51 @@
         rpy="0 0 0"/>
     </joint>
 
+    <!-- RGB camera mount (x forward on base_link) -->
+    <link name="camera_link">
+      <visual>
+        <origin xyz="${camera_lens_x} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${camera_depth} ${camera_width} ${camera_height}"/>
+        </geometry>
+        <material name="camera_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="${camera_lens_x} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${camera_depth} ${camera_width} ${camera_height}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="${camera_lens_x} 0 0" rpy="0 0 0"/>
+        <mass value="${camera_mass}"/>
+        <inertia
+          ixx="${camera_mass / 12.0 * (camera_width * camera_width + camera_height * camera_height)}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${camera_mass / 12.0 * (camera_depth * camera_depth + camera_height * camera_height)}"
+          iyz="0.0"
+          izz="${camera_mass / 12.0 * (camera_depth * camera_depth + camera_width * camera_width)}"/>
+      </inertial>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="camera_link"/>
+      <origin
+        xyz="${camera_x_offset} ${camera_y_offset} ${camera_z_offset}"
+        rpy="0 0 0"/>
+    </joint>
+
+    <!-- REP-103 optical frame - z forward, x right, y down -->
+    <link name="camera_optical_frame"/>
+
+    <joint name="camera_optical_joint" type="fixed">
+      <parent link="camera_link"/>
+      <child link="camera_optical_frame"/>
+      <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+    </joint>
+
   </xacro:macro>
 
 </robot>

@@ -3,7 +3,12 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction, RegisterEventHandler
+from launch.actions import (
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    OpaqueFunction,
+    RegisterEventHandler,
+)
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
@@ -29,9 +34,17 @@ def _resolve_world_path(world_arg: str, worlds_dir: str) -> str:
 
 def _launch_setup(context, *args, **kwargs):
     pkg_share = get_package_share_directory("amr_gazebo")
+    control_share = get_package_share_directory("amr_control")
     gazebo_ros_share = get_package_share_directory("gazebo_ros")
     worlds_dir = os.path.join(pkg_share, "worlds")
     xacro_file = os.path.join(pkg_share, "urdf", "amr.gazebo.xacro")
+    ros2_control_config = os.path.join(control_share, "config", "ros2_control.yaml")
+
+    if not os.path.isfile(ros2_control_config):
+        raise RuntimeError(
+            "ros2_control.yaml not found. Build amr_control first: "
+            f"{ros2_control_config}"
+        )
 
     world_path = _resolve_world_path(
         LaunchConfiguration("world").perform(context),
@@ -56,8 +69,16 @@ def _launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    # Absolute path for <parameters> (Sprint 7); controller chain matches Sprint 6.
     robot_description = ParameterValue(
-        Command(["xacro ", xacro_file]),
+        Command(
+            [
+                "xacro ",
+                xacro_file,
+                " ros2_control_config:=",
+                ros2_control_config,
+            ]
+        ),
         value_type=str,
     )
 
@@ -125,6 +146,7 @@ def _launch_setup(context, *args, **kwargs):
         parameters=[{"use_sim_time": use_sim_time}],
     )
 
+    # Sprint 6 / Sprint 3 freeze: spawn exit -> joint_state -> diff_drive -> relay
     spawn_joint_state_broadcaster = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=spawn_entity_node,

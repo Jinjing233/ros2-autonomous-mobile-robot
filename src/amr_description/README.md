@@ -11,6 +11,8 @@ URDF/Xacro for the diff-drive AMR. No dependency on other `amr_*` packages.
 
 LiDAR mount: center of base, `laser_z_offset` 0.14 m.
 
+RGB camera: front of chassis (`camera_x`=0.25 m, `camera_z`=0.25 m on `base_link`). TF: `camera_link` → `camera_optical_frame` (REP-103).
+
 ## View in RViz
 
 ```bash

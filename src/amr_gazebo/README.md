@@ -12,7 +12,7 @@ ros2 launch amr_gazebo gazebo.launch.py world:=office.world
 Loads `joint_state_broadcaster` and `diff_drive_controller` after spawn. Teleop in another terminal:
 
 ```bash
-ros2 launch amr_control cmd_vel_keyboard.launch.py
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 Spawn only (Gazebo already up):
@@ -34,5 +34,13 @@ ros2 launch amr_gazebo spawn_amr.launch.py
 |-------|--------|
 | `/scan` | LiDAR |
 | `/imu` | IMU |
+| `/image_raw` | RGB camera |
+| `/camera_info` | camera calibration |
 | `/diff_drive_controller/odom` | wheel odom + TF |
 | `/cmd_vel` | relayed to controller (see `amr_control`) |
+
+RViz (camera + lidar + model; use `gazebo_rviz.launch.py` for sim time):
+
+```bash
+ros2 launch amr_gazebo gazebo_rviz.launch.py
+```

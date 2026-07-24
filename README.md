@@ -78,6 +78,10 @@ Gazebo → /scan, /odom
 
 Nav2 config is based on `nav2_bringup` (Humble) with AMR frame/topic names and small controller tweaks for sim.
 
+## Development logs
+
+- [Gazebo ros2_control parser failure — 2026-07-24](docs/development_logs/2026-07-24_gazebo_ros2_control_parser_failure.md)
+
 ## License
 
 MIT
