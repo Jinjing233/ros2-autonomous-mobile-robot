@@ -9,7 +9,10 @@ setup(
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
         ("share/" + package_name, ["package.xml"]),
-        ("share/" + package_name + "/launch", ["launch/vision.launch.py"]),
+        (
+            "share/" + package_name + "/launch",
+            ["launch/vision.launch.py", "launch/canny.launch.py"],
+        ),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
@@ -24,6 +27,7 @@ setup(
     entry_points={
         "console_scripts": [
             "gray_converter = amr_vision.gray_converter:main",
+            "canny_detector = amr_vision.canny_detector:main",
         ],
     },
 )
