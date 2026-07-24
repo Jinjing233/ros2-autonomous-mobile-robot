@@ -56,6 +56,7 @@ In RViz use **2D Goal Pose**. The Nav2 panel goal tool often fails under sim tim
 | `amr_control` | `ros2_control` + keyboard teleop |
 | `amr_slam` | SLAM Toolbox mapping |
 | `amr_navigation` | map_server, AMCL, Nav2 |
+| `amr_vision` | Standalone OpenCV image processing (`ament_python`); not wired into any shared launch |
 
 ## Data flow
 
@@ -65,6 +66,16 @@ Gazebo → /scan, /odom, /image_raw
       → Nav2 → /cmd_vel → diff_drive_controller
 ```
 
+`amr_vision` (standalone, run separately — not part of the flow above):
+
+```text
+/image_raw → amr_vision (OpenCV, cv_bridge) → /image_gray
+```
+
+```bash
+ros2 launch amr_vision vision.launch.py
+```
+
 ## Status
 
 | Milestone | Done |
@@ -72,6 +83,7 @@ Gazebo → /scan, /odom, /image_raw
 | Robot model + Gazebo | yes |
 | ros2_control + teleop | yes |
 | RGB camera (Sprint 7 Phase 1) | yes |
+| OpenCV grayscale, `amr_vision` (Sprint 7 Phase 2) | yes |
 | SLAM + map save | yes |
 | AMCL localization | yes |
 | Nav2 navigation | yes |
@@ -88,6 +100,7 @@ AMR V1 / V1.1 (this repo, complete) → **V2 Perception** → **V3 Mobile Manipu
 
 - [Gazebo ros2_control parser failure — 2026-07-24](docs/development_logs/2026-07-24_gazebo_ros2_control_parser_failure.md)
 - [AMR V1 Final Validation — 2026-07-24](docs/development_logs/2026-07-24_AMR_V1_Final_Validation.md)
+- [Sprint 7 Phase 2 — OpenCV Grayscale (amr_vision) — 2026-07-24](docs/development_logs/2026-07-24_Sprint7_Phase2_OpenCV.md)
 
 ## License
 
