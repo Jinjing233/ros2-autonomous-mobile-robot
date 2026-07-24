@@ -1,6 +1,6 @@
 # ROS2 Autonomous Mobile Robot (AMR)
 
-Diff-drive mobile robot on **ROS2 Humble** and **Gazebo Classic**: simulation, SLAM, AMCL, Nav2.
+Diff-drive mobile robot on **ROS2 Humble** and **Gazebo Classic**: simulation, LiDAR/IMU/RGB camera sensing, SLAM, AMCL, Nav2. **AMR V1 / V1.1: complete.**
 
 Demo: [YouTube](https://youtu.be/XBV4MKnJ9yI)
 
@@ -60,7 +60,7 @@ In RViz use **2D Goal Pose**. The Nav2 panel goal tool often fails under sim tim
 ## Data flow
 
 ```text
-Gazebo → /scan, /odom
+Gazebo → /scan, /odom, /image_raw
       → SLAM (mapping) or AMCL + map_server (nav)
       → Nav2 → /cmd_vel → diff_drive_controller
 ```
@@ -71,16 +71,23 @@ Gazebo → /scan, /odom
 |-----------|------|
 | Robot model + Gazebo | yes |
 | ros2_control + teleop | yes |
+| RGB camera (Sprint 7 Phase 1) | yes |
 | SLAM + map save | yes |
-| AMCL + Nav2 | yes |
+| AMCL localization | yes |
+| Nav2 navigation | yes |
 | Office world (V1.1) | yes |
 | Perception / manipulation | no |
 
 Nav2 config is based on `nav2_bringup` (Humble) with AMR frame/topic names and small controller tweaks for sim.
 
+## Roadmap
+
+AMR V1 / V1.1 (this repo, complete) → **V2 Perception** → **V3 Mobile Manipulation** → **Physical AI**
+
 ## Development logs
 
 - [Gazebo ros2_control parser failure — 2026-07-24](docs/development_logs/2026-07-24_gazebo_ros2_control_parser_failure.md)
+- [AMR V1 Final Validation — 2026-07-24](docs/development_logs/2026-07-24_AMR_V1_Final_Validation.md)
 
 ## License
 
