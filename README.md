@@ -9,8 +9,11 @@ A differential-drive mobile robot simulation and control stack built on **ROS2 H
 ## Current Status
 
 - **AMR V1 / V1.1** — complete (robot model, Gazebo simulation, `ros2_control` differential drive, teleop, odometry, SLAM, AMCL localization, Nav2 navigation, office world).
-- **AMR V2 — Sprint 7 Phase 1 (RGB Camera Integration)** — complete.
-- **Sprint 7 Phase 2 (OpenCV grayscale image processing)** — complete.
+- **AMR V2 — Sprint 7 (Vision Perception Pipeline)** — complete, all four phases:
+  - Phase 1 — RGB Camera Integration
+  - Phase 2 — OpenCV Grayscale Conversion
+  - Phase 3 — Gaussian Blur + Canny Edge Detection
+  - Phase 4 — Combined Perception Pipeline + YAML Parameters
 - `amr_vision` is currently a **standalone package**: it is not wired into `amr_bringup` or any shared/top-level launch file, and must be run separately.
 
 ## Completed Development Stages
@@ -27,6 +30,8 @@ A differential-drive mobile robot simulation and control stack built on **ROS2 H
 | V1.1 | Office world and project presentation |
 | Sprint 7 Phase 1 | RGB camera integration |
 | Sprint 7 Phase 2 | OpenCV grayscale image processing (`amr_vision`) |
+| Sprint 7 Phase 3 | Gaussian blur + Canny edge detection (`amr_vision`) |
+| Sprint 7 Phase 4 | Combined perception pipeline + YAML parameters (`amr_vision`) |
 
 ## Current Features
 
@@ -44,6 +49,8 @@ A differential-drive mobile robot simulation and control stack built on **ROS2 H
 - Nav2 planning and navigation
 - RViz2 visualization
 - OpenCV grayscale image processing (standalone)
+- Canny edge detection with configurable Gaussian blur / threshold parameters (standalone)
+- Combined vision pipeline (grayscale + edge detection) with YAML-based parameter loading (standalone)
 
 ## System Architecture
 
@@ -68,10 +75,17 @@ flowchart LR
     TELEOP[teleop_twist_keyboard] -->|/cmd_vel| RELAY
     RELAY -->|/diff_drive_controller/cmd_vel_unstamped| RC
 
-    IMGRAW --> VISION[amr_vision: OpenCV grayscale] -->|/image_gray| GRAY
+    IMGRAW --> GRAYNODE[amr_vision: gray_converter] -->|/image_gray| GRAY
+    IMGRAW --> CANNYNODE[amr_vision: canny_detector] -->|/image_edges| EDGES
 ```
 
-`amr_vision` consumes `/image_raw` independently and is not part of the navigation control loop above.
+```text
+/image_raw
+├── gray_converter  → /image_gray
+└── canny_detector  → /image_edges
+```
+
+`amr_vision` consumes `/image_raw` independently and is not part of the navigation control loop above. Both `amr_vision` nodes can run standalone or together via `perception.launch.py`.
 
 ## ROS2 Packages
 
@@ -83,7 +97,7 @@ flowchart LR
 | `amr_slam` | SLAM Toolbox online mapping, map saving | Complete |
 | `amr_navigation` | Map server, AMCL localization, Nav2 navigation | Complete |
 | `amr_bringup` | Robot-model-only RViz display (no Gazebo) | Complete (minimal) |
-| `amr_vision` | Standalone OpenCV image processing (`ament_python`) | Complete, not integrated into bringup |
+| `amr_vision` | Standalone OpenCV image processing — grayscale, Canny edge detection, combined pipeline (`ament_python`) | Complete, not integrated into bringup |
 | `amr_perception` | Future perception pipeline (costmap layers, camera-based perception) | Placeholder |
 | `amr_dashboard` | Future operator dashboard (Foxglove / rosbridge) | Placeholder |
 
@@ -98,7 +112,8 @@ flowchart LR
 | `/scan` | Gazebo LiDAR plugin |
 | `/imu` | Gazebo IMU plugin |
 | `/image_raw`, `/camera_info` | Gazebo RGB camera plugin |
-| `/image_gray` | `amr_vision` |
+| `/image_gray` | `amr_vision` (`gray_converter`) |
+| `/image_edges` | `amr_vision` (`canny_detector`) |
 | `/map` | SLAM Toolbox or `map_server` |
 | `/amcl_pose` | `amcl` |
 
@@ -202,10 +217,21 @@ ros2 launch amr_navigation navigation_rviz.launch.py use_sim_time:=true
 
 Set goals with RViz **2D Goal Pose** (routed through `nav_goal_relay`); the Nav2 panel goal tool can time out under simulation time.
 
-**OpenCV grayscale (`amr_vision`, standalone — requires `/image_raw` already publishing):**
+**`amr_vision` (standalone — requires `/image_raw` already publishing):**
 
 ```bash
+# Grayscale only
 ros2 launch amr_vision vision.launch.py
+
+# Canny edge detection only
+ros2 launch amr_vision canny.launch.py
+
+# Combined pipeline (grayscale + edge detection, parameters from config/vision.yaml)
+ros2 launch amr_vision perception.launch.py
+
+# Parameter overrides
+ros2 launch amr_vision canny.launch.py canny_threshold1:=30.0 canny_threshold2:=90.0
+ros2 launch amr_vision perception.launch.py vision_config:=/path/to/custom_vision.yaml
 ```
 
 ## Verification
@@ -219,7 +245,10 @@ ros2 topic list | grep -E "cmd_vel|odom|joint_states|scan|imu|image"
 
 # amr_vision output
 ros2 topic hz /image_gray
+ros2 topic hz /image_edges
 ros2 topic info /image_gray
+ros2 topic info /image_edges
+ros2 param list /amr_vision_canny_detector
 ```
 
 ## Development Method
@@ -234,6 +263,7 @@ ros2 topic info /image_gray
 - [Gazebo ros2_control parser failure — 2026-07-24](docs/development_logs/2026-07-24_gazebo_ros2_control_parser_failure.md)
 - [AMR V1 Final Validation — 2026-07-24](docs/development_logs/2026-07-24_AMR_V1_Final_Validation.md)
 - [Sprint 7 Phase 2 — OpenCV Grayscale (amr_vision) — 2026-07-24](docs/development_logs/2026-07-24_Sprint7_Phase2_OpenCV.md)
+- [Sprint 7 Final Validation — 2026-07-24](docs/development_logs/2026-07-24_Sprint7_Final_Validation.md)
 
 ## Roadmap
 

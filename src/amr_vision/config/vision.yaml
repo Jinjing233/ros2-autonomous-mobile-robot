@@ -1,0 +1,6 @@
+amr_vision_canny_detector:
+  ros__parameters:
+    canny_threshold1: 50.0
+    canny_threshold2: 150.0
+    gaussian_blur_kernel_size: 5
+    gaussian_blur_sigma: 0.0

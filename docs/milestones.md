@@ -13,6 +13,7 @@ This document tracks sprint progress, deliverables, and acceptance criteria for 
 | 4 | SLAM Toolbox mapping | Planned |
 | 5 | Nav2 autonomous navigation | Planned |
 | 6+ | Perception, dashboard, hardware bring-up | Future |
+| 7 | Vision perception pipeline (`amr_vision`) | **Complete** |
 
 > **New session?** Read [handoff.md](handoff.md) for ROS graph, key files, known issues, and next tasks.
 
@@ -206,3 +207,37 @@ Navigate autonomously to goal poses in simulation using Nav2.
 | Hardware | `amr_control`, `amr_bringup` | Real robot driver, hardware interface launch |
 
 Detailed acceptance criteria for Sprint 6+ will be defined when Sprint 5 is complete.
+
+---
+
+## Sprint 7 — Vision Perception Pipeline (`amr_vision`)
+
+**Status: Complete**
+
+### Goal
+
+Add a standalone OpenCV-based image processing package that consumes the Sprint 7 Phase 1 RGB camera feed, independent from all other `amr_*` packages and not wired into `amr_bringup` or any shared/top-level launch file.
+
+### Packages
+
+- `amr_vision` — primary implementation (new package, `ament_python`)
+- `amr_gazebo` — RGB camera plugin (`/image_raw`, `/camera_info`), added in Phase 1
+
+### Deliverables
+
+- [x] Phase 1: RGB camera integration in `amr_gazebo` (`/image_raw`, `/camera_info`)
+- [x] Phase 2: `gray_converter` node — `/image_raw` → `cv_bridge`/OpenCV grayscale → `/image_gray`
+- [x] Phase 3: `canny_detector` node — `/image_raw` → grayscale → Gaussian blur → Canny → `/image_edges`, with `canny_threshold1`, `canny_threshold2`, `gaussian_blur_kernel_size`, `gaussian_blur_sigma` as ROS2 parameters
+- [x] Phase 4: `perception.launch.py` combining `gray_converter` + `canny_detector`, with Canny parameters loaded from `config/vision.yaml`
+- [x] Independent launch files preserved per node/pair (`vision.launch.py`, `canny.launch.py`, `perception.launch.py`)
+
+### Acceptance Criteria
+
+- [x] `colcon build --symlink-install --packages-select amr_vision` succeeds
+- [x] `/image_gray` and `/image_edges` both publish `mono8` images while `/image_raw` is active
+- [x] Canny thresholds and Gaussian blur parameters are runtime-configurable ROS2 parameters, loadable from YAML
+- [x] `gray_converter` and `canny_detector` both shut down cleanly (`SIGINT` → `process has finished cleanly`, no `RCLError`)
+- [x] No existing `amr_*` package (`amr_description`, `amr_gazebo` core, `amr_control`, `amr_slam`, `amr_navigation`, `amr_bringup`) was modified beyond the Phase 1 camera addition
+- [x] `amr_vision` remains standalone — not referenced by `amr_bringup` or any shared/top-level launch file
+
+Full validation detail: [2026-07-24_Sprint7_Final_Validation.md](development_logs/2026-07-24_Sprint7_Final_Validation.md).

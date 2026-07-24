@@ -11,8 +11,13 @@ setup(
         ("share/" + package_name, ["package.xml"]),
         (
             "share/" + package_name + "/launch",
-            ["launch/vision.launch.py", "launch/canny.launch.py"],
+            [
+                "launch/vision.launch.py",
+                "launch/canny.launch.py",
+                "launch/perception.launch.py",
+            ],
         ),
+        ("share/" + package_name + "/config", ["config/vision.yaml"]),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
