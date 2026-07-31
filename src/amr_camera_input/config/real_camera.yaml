@@ -1,0 +1,21 @@
+# Base parameters for the official ROS2 Humble `v4l2_camera` node, loaded by
+# real_camera.launch.py before the video_device / image_size overrides derived
+# from the video_device / image_width / image_height launch arguments.
+#
+# Parameter names below were confirmed against the actually-installed
+# `ros-humble-v4l2-camera` (0.6.2) node via `ros2 param list` / `ros2 param get`
+# on a running instance — not guessed. In particular:
+#   - there is no separate `image_width` / `image_height` parameter; the real
+#     parameter is `image_size`, an integer array `[width, height]`.
+#   - there is no `frame_rate` parameter at all in this version. Frame rate is
+#     implicitly fixed by the (`pixel_format`, `image_size`) pair, per the
+#     device's enumerated capabilities (`v4l2-ctl -d /dev/video0 --list-formats-ext`).
+#     For the confirmed camera (Integrated_Webcam_HD, uvcvideo) both
+#     YUYV 640x480 and MJPG 640x480 report 30 fps.
+v4l2_camera:
+  ros__parameters:
+    video_device: /dev/video0
+    image_size: [640, 480]
+    pixel_format: "YUYV"
+    output_encoding: "rgb8"
+    camera_frame_id: "real_camera_optical_frame"
