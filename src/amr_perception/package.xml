@@ -12,6 +12,8 @@
   <exec_depend>amr_description</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>amr_camera_input</exec_depend>
+  <exec_depend>amr_vision</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
