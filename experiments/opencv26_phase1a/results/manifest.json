@@ -1,0 +1,1505 @@
+{
+ "seed": 26,
+ "allowed_license_ids": [
+  4,
+  5,
+  7,
+  8
+ ],
+ "licenses": {
+  "1": "Attribution-NonCommercial-ShareAlike License",
+  "2": "Attribution-NonCommercial License",
+  "3": "Attribution-NonCommercial-NoDerivs License",
+  "4": "Attribution License",
+  "5": "Attribution-ShareAlike License",
+  "6": "Attribution-NoDerivs License",
+  "7": "No known copyright restrictions",
+  "8": "United States Government Work"
+ },
+ "entries": [
+  {
+   "role": "pos_cat",
+   "coco_id": 255965,
+   "file": "000000255965.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000255965.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6094/6277341642_28ebd749f2_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": "cat",
+   "gt_bbox": [
+    0.0,
+    147.84,
+    548.21,
+    247.94
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 435299,
+   "file": "000000435299.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000435299.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3714/9631359693_80164e6e57_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    272.37,
+    32.63,
+    147.99,
+    288.87
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 157807,
+   "file": "000000157807.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000157807.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4073/4770866338_a523fcc318_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 427,
+   "gt_class": "cat",
+   "gt_bbox": [
+    103.34,
+    155.99,
+    375.33,
+    221.3
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 456292,
+   "file": "000000456292.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000456292.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/27/39673832_616a764579_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    178.32,
+    335.55,
+    139.61,
+    176.93
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 108244,
+   "file": "000000108244.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000108244.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/49/165710819_fb98979f1e_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    182.12,
+    157.18,
+    354.34,
+    194.82
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 460841,
+   "file": "000000460841.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000460841.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2369/1800134882_706bec9a8d_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": "cat",
+   "gt_bbox": [
+    55.89,
+    106.71,
+    125.54,
+    122.3
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 80949,
+   "file": "000000080949.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000080949.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2221/2232846153_5eee9c75fc_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 438,
+   "gt_class": "cat",
+   "gt_bbox": [
+    26.37,
+    129.99,
+    599.08,
+    235.48
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 231831,
+   "file": "000000231831.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000231831.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2324/2242089027_800a938327_z.jpg",
+   "license_id": 5,
+   "width": 481,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    37.38,
+    160.75,
+    442.68,
+    479.14
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 163155,
+   "file": "000000163155.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000163155.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6239/6277328008_142760d74c_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": "cat",
+   "gt_bbox": [
+    5.51,
+    154.27,
+    537.19,
+    244.26
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 399560,
+   "file": "000000399560.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000399560.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6211/6868773848_4d64c5ab2a_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 478,
+   "gt_class": "cat",
+   "gt_bbox": [
+    144.54,
+    116.4,
+    460.44,
+    219.9
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 153217,
+   "file": "000000153217.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000153217.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/32/36546844_5d6e8e5c37_z.jpg",
+   "license_id": 4,
+   "width": 375,
+   "height": 500,
+   "gt_class": "cat",
+   "gt_bbox": [
+    17.2,
+    315.05,
+    143.02,
+    174.2
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 177015,
+   "file": "000000177015.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000177015.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/131/355302776_1d1215b7c1_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    312.68,
+    182.81,
+    298.4,
+    178.56
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 386457,
+   "file": "000000386457.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000386457.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8336/8393574815_e640d7911a_z.jpg",
+   "license_id": 5,
+   "width": 426,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    123.52,
+    133.28,
+    118.26,
+    384.73
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 284623,
+   "file": "000000284623.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000284623.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2585/3697788816_f6b63cbb16_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    36.62,
+    0.0,
+    427.91,
+    412.58
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 119828,
+   "file": "000000119828.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000119828.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2646/4171324648_411cccdac6_z.jpg",
+   "license_id": 5,
+   "width": 500,
+   "height": 375,
+   "gt_class": "cat",
+   "gt_bbox": [
+    118.55,
+    146.77,
+    320.16,
+    157.26
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 58111,
+   "file": "000000058111.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000058111.jpg",
+   "flickr_url": "http://farm2.staticflickr.com/1212/1432440864_7e0f17c51a_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 490,
+   "gt_class": "cat",
+   "gt_bbox": [
+    32.74,
+    22.7,
+    461.48,
+    461.49
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 181859,
+   "file": "000000181859.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000181859.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3393/3430882393_21bffd2a53_z.jpg",
+   "license_id": 4,
+   "width": 426,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    96.34,
+    221.59,
+    232.61,
+    268.39
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 343076,
+   "file": "000000343076.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000343076.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3528/3940136096_1831da02ea_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    0.0,
+    17.24,
+    456.55,
+    613.79
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 475732,
+   "file": "000000475732.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000475732.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4047/4277980850_fb595d679e_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    2.06,
+    122.84,
+    637.94,
+    357.16
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 558073,
+   "file": "000000558073.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000558073.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/90/208357409_c000a120af_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": "cat",
+   "gt_bbox": [
+    122.43,
+    111.29,
+    242.35,
+    197.31
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 416256,
+   "file": "000000416256.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000416256.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/34/64280333_7acf38cfb3_z.jpg",
+   "license_id": 5,
+   "width": 500,
+   "height": 375,
+   "gt_class": "cat",
+   "gt_bbox": [
+    117.74,
+    86.29,
+    250.81,
+    153.23
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 290843,
+   "file": "000000290843.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000290843.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3426/3384885001_346b9951a5_z.jpg",
+   "license_id": 5,
+   "width": 428,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    22.02,
+    246.37,
+    220.22,
+    256.0
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 166277,
+   "file": "000000166277.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000166277.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/247/522239585_3ad698c8a7_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": "cat",
+   "gt_bbox": [
+    1.38,
+    2.75,
+    360.6,
+    496.86
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 119233,
+   "file": "000000119233.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000119233.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2248/2050977429_aff593ecc2_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 334,
+   "gt_class": "cat",
+   "gt_bbox": [
+    12.7,
+    97.96,
+    444.59,
+    162.89
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 46378,
+   "file": "000000046378.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000046378.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2163/1809310489_e2707eed0b_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 360,
+   "gt_class": "cat",
+   "gt_bbox": [
+    2.31,
+    0.07,
+    607.45,
+    248.23
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 520531,
+   "file": "000000520531.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000520531.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4062/4340091694_248849448e_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "cat",
+   "gt_bbox": [
+    224.0,
+    105.55,
+    341.68,
+    349.93
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 198641,
+   "file": "000000198641.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000198641.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4062/4346863707_0e5e93cea4_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 479,
+   "gt_class": "cat",
+   "gt_bbox": [
+    221.13,
+    184.16,
+    274.16,
+    238.78
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 94336,
+   "file": "000000094336.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000094336.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3110/2412271569_4e03bbb349_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 336,
+   "gt_class": "cat",
+   "gt_bbox": [
+    141.63,
+    15.17,
+    247.12,
+    273.86
+   ]
+  },
+  {
+   "role": "pos_cat",
+   "coco_id": 540928,
+   "file": "000000540928.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000540928.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3591/3373335806_30482ab023_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 455,
+   "gt_class": "cat",
+   "gt_bbox": [
+    236.15,
+    4.17,
+    305.37,
+    292.14
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 338901,
+   "file": "000000338901.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000338901.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3220/3098425884_0dfc6b86d5_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    272.48,
+    140.61,
+    367.52,
+    228.84
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 347930,
+   "file": "000000347930.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000347930.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4049/4377071026_9646c57fb7_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    161.3,
+    103.48,
+    254.57,
+    335.22
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 261161,
+   "file": "000000261161.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000261161.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8325/8113006533_a2d7ac54d0_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 426,
+   "gt_class": "dog",
+   "gt_bbox": [
+    324.45,
+    26.68,
+    271.95,
+    399.32
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 404484,
+   "file": "000000404484.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000404484.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2645/4216057008_f835cc6fdf_z.jpg",
+   "license_id": 5,
+   "width": 320,
+   "height": 240,
+   "gt_class": "dog",
+   "gt_bbox": [
+    86.93,
+    90.76,
+    82.5,
+    74.54
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 331075,
+   "file": "000000331075.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000331075.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3790/9178299324_d12a3582e0_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 606,
+   "gt_class": "dog",
+   "gt_bbox": [
+    4.9,
+    110.18,
+    539.89,
+    495.82
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 80153,
+   "file": "000000080153.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000080153.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5142/5650798989_4e830b5a03_z.jpg",
+   "license_id": 4,
+   "width": 428,
+   "height": 640,
+   "gt_class": "dog",
+   "gt_bbox": [
+    204.15,
+    358.8,
+    86.89,
+    180.08
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 283412,
+   "file": "000000283412.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000283412.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5215/5499994653_748a7cbcbd_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": "dog",
+   "gt_bbox": [
+    1.73,
+    2.44,
+    439.07,
+    415.69
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 392818,
+   "file": "000000392818.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000392818.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2446/3572256424_9d106e4692_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 451,
+   "gt_class": "dog",
+   "gt_bbox": [
+    0.0,
+    10.55,
+    500.0,
+    436.45
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 498286,
+   "file": "000000498286.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000498286.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6195/6048065934_bfaf1be964_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    0.97,
+    9.8,
+    467.44,
+    463.58
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 389933,
+   "file": "000000389933.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000389933.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4061/4376326145_7ef66603e3_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    3.87,
+    82.26,
+    529.36,
+    391.93
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 579321,
+   "file": "000000579321.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000579321.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4114/4737904204_465fa5d55b_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 498,
+   "gt_class": "dog",
+   "gt_bbox": [
+    200.61,
+    89.65,
+    400.22,
+    251.02
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 222317,
+   "file": "000000222317.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000222317.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3009/3098419724_89827f6fd7_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    223.03,
+    197.82,
+    227.88,
+    89.21
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 486479,
+   "file": "000000486479.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000486479.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3563/3792891749_6efb555740_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": "dog",
+   "gt_bbox": [
+    65.64,
+    52.89,
+    236.17,
+    181.84
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 309938,
+   "file": "000000309938.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000309938.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2460/3742502573_02458ab759_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    100.85,
+    110.55,
+    338.42,
+    231.75
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 377575,
+   "file": "000000377575.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000377575.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2598/3937557668_c8b472124b_z.jpg",
+   "license_id": 4,
+   "width": 426,
+   "height": 640,
+   "gt_class": "dog",
+   "gt_bbox": [
+    58.42,
+    159.35,
+    221.99,
+    463.45
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 446522,
+   "file": "000000446522.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000446522.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/169/414738646_adafe60def_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": "dog",
+   "gt_bbox": [
+    151.95,
+    336.22,
+    212.48,
+    172.56
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 139872,
+   "file": "000000139872.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000139872.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/92/260183330_494bd996d8_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    66.91,
+    32.0,
+    415.03,
+    395.64
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 253386,
+   "file": "000000253386.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000253386.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3196/3037448990_28822471dd_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 333,
+   "gt_class": "dog",
+   "gt_bbox": [
+    145.39,
+    24.89,
+    316.25,
+    302.85
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 530624,
+   "file": "000000530624.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000530624.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5195/7235177844_90ef706004_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 478,
+   "gt_class": "dog",
+   "gt_bbox": [
+    96.57,
+    107.19,
+    518.55,
+    194.09
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 17029,
+   "file": "000000017029.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000017029.jpg",
+   "flickr_url": "http://farm8.staticflickr.com/7304/8746020648_f1e2075b86_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 640,
+   "gt_class": "dog",
+   "gt_bbox": [
+    154.84,
+    105.81,
+    250.32,
+    436.13
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 78823,
+   "file": "000000078823.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000078823.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/9/13918737_12ed28cb16_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": "dog",
+   "gt_bbox": [
+    197.97,
+    117.22,
+    170.45,
+    222.07
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 29393,
+   "file": "000000029393.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000029393.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2556/4228514131_81f3416db3_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": "dog",
+   "gt_bbox": [
+    170.04,
+    157.52,
+    195.09,
+    183.7
+   ]
+  },
+  {
+   "role": "pos_dog",
+   "coco_id": 126110,
+   "file": "000000126110.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000126110.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/58/192105537_1b69c0b40d_z.jpg",
+   "license_id": 5,
+   "width": 320,
+   "height": 240,
+   "gt_class": "dog",
+   "gt_bbox": [
+    105.06,
+    52.22,
+    56.14,
+    132.36
+   ]
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 113403,
+   "file": "000000113403.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000113403.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2613/3713015524_bac439d1e6_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 451,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 50844,
+   "file": "000000050844.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000050844.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2674/3904379072_e7e9125836_z.jpg",
+   "license_id": 4,
+   "width": 334,
+   "height": 500,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 50638,
+   "file": "000000050638.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000050638.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3085/5708760061_15445422e8_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 393,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 20553,
+   "file": "000000020553.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000020553.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3288/2926009969_406b0b7654_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 249129,
+   "file": "000000249129.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000249129.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2400/2113224886_a95ec64e34_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 446703,
+   "file": "000000446703.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000446703.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/144/334302892_86ce0431c0_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 333,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 73118,
+   "file": "000000073118.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000073118.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8035/8017027419_188c5200dd_z.jpg",
+   "license_id": 4,
+   "width": 612,
+   "height": 612,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 411938,
+   "file": "000000411938.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000411938.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5301/5694283812_1ba30885f9_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 427,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 410880,
+   "file": "000000410880.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000410880.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2457/3790889558_3d54eae6fb_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_teddy",
+   "coco_id": 325527,
+   "file": "000000325527.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000325527.jpg",
+   "flickr_url": "http://farm2.staticflickr.com/1403/1429959956_19847d7405_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 374,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 200421,
+   "file": "000000200421.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000200421.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3647/3381904543_0d6865b9e9_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 506178,
+   "file": "000000506178.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000506178.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/155/411777080_a4dfa5fef0_z.jpg",
+   "license_id": 4,
+   "width": 375,
+   "height": 500,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 170099,
+   "file": "000000170099.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000170099.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2280/1812763231_06381c802c_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 478,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 239347,
+   "file": "000000239347.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000239347.jpg",
+   "flickr_url": "http://farm8.staticflickr.com/7084/7311947216_1eb6416561_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 530061,
+   "file": "000000530061.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000530061.jpg",
+   "flickr_url": "http://farm8.staticflickr.com/7299/9479155110_5995092489_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 455,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 233825,
+   "file": "000000233825.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000233825.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4006/4421796357_62f0208d59_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 546717,
+   "file": "000000546717.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000546717.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2769/4117004152_d8508e562d_z.jpg",
+   "license_id": 4,
+   "width": 471,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 23899,
+   "file": "000000023899.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000023899.jpg",
+   "flickr_url": "http://farm2.staticflickr.com/1419/4598390017_b554e5d29b_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 425,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 367569,
+   "file": "000000367569.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000367569.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5333/7409214738_e99f75d461_z.jpg",
+   "license_id": 5,
+   "width": 469,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "hard_neg_furniture",
+   "coco_id": 403353,
+   "file": "000000403353.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000403353.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8486/8245255095_5669dbf878_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 22479,
+   "file": "000000022479.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000022479.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3447/3880630600_2c837dbf23_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 605,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 239857,
+   "file": "000000239857.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000239857.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3493/3923418369_0b5abe5987_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 333,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 14473,
+   "file": "000000014473.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000014473.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8401/8607706408_e00725a54d_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 526728,
+   "file": "000000526728.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000526728.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/48/110025548_2354dbb701_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 356424,
+   "file": "000000356424.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000356424.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8116/8607070980_b791deaeb4_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 289417,
+   "file": "000000289417.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000289417.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4057/4431669174_e67a2421a5_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 375,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 96549,
+   "file": "000000096549.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000096549.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8265/8622452992_833365e25c_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 214,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 375469,
+   "file": "000000375469.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000375469.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4120/4866723553_847054d685_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 181,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 550084,
+   "file": "000000550084.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000550084.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4040/4346202822_75eda1321f_z.jpg",
+   "license_id": 5,
+   "width": 500,
+   "height": 375,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 564133,
+   "file": "000000564133.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000564133.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8348/8197453784_a3be1b210e_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 424,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 78266,
+   "file": "000000078266.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000078266.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6167/6180130159_ae0bf83d72_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 428,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 189078,
+   "file": "000000189078.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000189078.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4026/4430551771_58c190b055_z.jpg",
+   "license_id": 4,
+   "width": 500,
+   "height": 334,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 536343,
+   "file": "000000536343.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000536343.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8001/7579423356_f802694727_z.jpg",
+   "license_id": 5,
+   "width": 263,
+   "height": 175,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 108440,
+   "file": "000000108440.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000108440.jpg",
+   "flickr_url": "http://farm1.staticflickr.com/223/496954802_7f163f830a_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 434,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 153632,
+   "file": "000000153632.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000153632.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2577/4039827010_75186a4bf5_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 347335,
+   "file": "000000347335.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000347335.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2813/8751013631_0001c7d99c_z.jpg",
+   "license_id": 4,
+   "width": 480,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 90891,
+   "file": "000000090891.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000090891.jpg",
+   "flickr_url": "http://farm7.staticflickr.com/6145/5938772497_5a89d3ec7c_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 431,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 75612,
+   "file": "000000075612.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000075612.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2579/4191595324_3c1f160567_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 434479,
+   "file": "000000434479.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000434479.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3517/3752160367_928fef7d3f_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 426,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 250901,
+   "file": "000000250901.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000250901.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4038/5080030991_42d65ee6f2_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 426,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 168883,
+   "file": "000000168883.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000168883.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3477/4031027612_1547340e64_z.jpg",
+   "license_id": 4,
+   "width": 479,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 311518,
+   "file": "000000311518.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000311518.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5445/7054786245_00054fbcc6_z.jpg",
+   "license_id": 5,
+   "width": 640,
+   "height": 427,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 372466,
+   "file": "000000372466.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000372466.jpg",
+   "flickr_url": "http://farm4.staticflickr.com/3270/2668055050_d6b24eb5f4_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 360,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 545407,
+   "file": "000000545407.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000545407.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5450/7230915270_bd99d72412_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 424,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 464786,
+   "file": "000000464786.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000464786.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2463/3824077883_b53d4d7506_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 428,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 84477,
+   "file": "000000084477.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000084477.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8454/7897786544_4e902801e3_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 427,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 549167,
+   "file": "000000549167.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000549167.jpg",
+   "flickr_url": "http://farm5.staticflickr.com/4149/5037964953_06802c3336_z.jpg",
+   "license_id": 4,
+   "width": 426,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 484404,
+   "file": "000000484404.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000484404.jpg",
+   "flickr_url": "http://farm9.staticflickr.com/8519/8621095125_f3b1b07192_z.jpg",
+   "license_id": 4,
+   "width": 640,
+   "height": 480,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 213224,
+   "file": "000000213224.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000213224.jpg",
+   "flickr_url": "http://farm6.staticflickr.com/5251/5484827300_5720729cfa_z.jpg",
+   "license_id": 4,
+   "width": 427,
+   "height": 640,
+   "gt_class": null,
+   "gt_bbox": null
+  },
+  {
+   "role": "neg",
+   "coco_id": 135670,
+   "file": "000000135670.jpg",
+   "coco_url": "http://images.cocodataset.org/val2017/000000135670.jpg",
+   "flickr_url": "http://farm3.staticflickr.com/2528/3925803088_79760dbe81_z.jpg",
+   "license_id": 5,
+   "width": 375,
+   "height": 500,
+   "gt_class": null,
+   "gt_bbox": null
+  }
+ ]
+}

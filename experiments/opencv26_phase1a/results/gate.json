@@ -1,0 +1,11 @@
+{
+ "clear_recall_pets_pct": 92.3,
+ "clear_recall_cat_pct": 100.0,
+ "clear_recall_dog_pct": 82.6,
+ "all_negative_false_alarm_pct": 2.0,
+ "hard_negative_false_alarm_pct": 5.0,
+ "latency_total_ms_mean": 189.7,
+ "pass_recall": true,
+ "pass_false_alarm": true,
+ "pass_latency": true
+}
